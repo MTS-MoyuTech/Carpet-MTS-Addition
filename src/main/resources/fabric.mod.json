@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "carpet_mts_addition",
+  "version": "${version}",
+
+  "name": "Carpet MTS Addition",
+  "description": "",
+  "authors": [
+    "Braised_Loach"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/niqiu_mts_Addition/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "MTSCarpetAddition.MTSCarpetMod"
+    ]
+  },
+  "mixins": [
+    "mts_carpet_mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "minecraft": "1.16.x",
+    "java": ">=16",
+    "carpet": "*"
+  },
+  "suggests": {
+  },
+  "custom": {
+    "modmenu": {
+      "parent": "carpet"
+    }
+  }
+}

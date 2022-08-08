@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "MTSCarpetAddition.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "CatSpawnerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
