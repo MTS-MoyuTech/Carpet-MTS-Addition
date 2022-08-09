@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class MTSCarpetServer implements CarpetExtension {
-	public static final String fancyName = "Carpet NiQiu Addition";
+	public static final String fancyName = "Carpet MTS Addition";
 	public static final Logger LOGGER = LogManager.getLogger(fancyName);
 	public static MinecraftServer minecraft_server;
 
@@ -24,7 +24,7 @@ public class MTSCarpetServer implements CarpetExtension {
 
 	@Override
 	public String version() {
-		return "Carpet NiQiu Addition";
+		return "Carpet MTS Addition";
 	}
 
 }
