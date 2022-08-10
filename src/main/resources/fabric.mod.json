@@ -9,17 +9,17 @@
     "Braised_Loach"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.mtserver.top",
+    "sources": "https://github.com/MTS-MoyuTech/Carpet-MTS-Addition/issues"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/niqiu_mts_Addition/icon.png",
+  "icon": "assets/carpet_mts_Addition/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "MTSCarpetAddition.MTSCarpetMod"
+      "top.mtserver.MTSCarpetMod"
     ]
   },
   "mixins": [
