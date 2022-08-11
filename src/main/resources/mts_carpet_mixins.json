@@ -4,7 +4,9 @@
   "package": "top.mtserver.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "CatSpawnerMixin"
+    "CatSpawnerMixin",
+    "ServerWorldMixin",
+    "FireworkRocketEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
