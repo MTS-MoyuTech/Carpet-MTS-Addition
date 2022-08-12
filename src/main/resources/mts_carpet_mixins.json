@@ -6,7 +6,8 @@
   "mixins": [
     "CatSpawnerMixin",
     "ServerWorldMixin",
-    "FireworkRocketEntityMixin"
+    "FireworkRocketEntityMixin",
+    "IceBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
