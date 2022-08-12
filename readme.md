@@ -8,7 +8,7 @@
 
 ### Alpha版本,功能很少(
 
-## 规则
+## 规则如下
 
 ### 猫咪生成器追踪 (CatSpawnerTracker)
 
@@ -16,7 +16,6 @@
 
 - 类型: `boolean`
 - 默认值: `false`
-- 参考选项: `false`, `true`
 - 分类: `MTS`, `SPAWNER`, `SURVIVAL`
 
 ### 猫咪生成间隔 (CatSpawnerInterval)
