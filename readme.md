@@ -1,7 +1,7 @@
 # Carpet MTS Addition
 #### On Minecraft 1.16.5
-[![License](https://img.shields.io/github/license/MTS-MoyuTech/Carpet-MTS-Addition.svg)](http://www.gnu.org/licenses/lgpl-3.0.html)
-[![Issues](https://img.shields.io/github/issues/MTS-MoyuTech/Carpet-MTS-Addition.svg)](https://github.com/MTS-MoyuTech/Carpet-MTS-Addition/issues)
+[![License](https://img.shields.io/github/license/Rene8028/carpet-iee-addition.svg)](http://www.gnu.org/licenses/lgpl-3.0.html)
+[![Issues](https://img.shields.io/github/issues/Rene8028/carpet-iee-addition.svg)](https://github.com/Rene8028/carpet-iee-addition/issues)
 [![Parent](https://img.shields.io/badge/Parent-fabric--carpet-blue)](https://github.com/gnembon/fabric-carpet)
 
 ## 这是一个 [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabric-carpet) 的扩展 mod,主要用于调试机器
@@ -43,6 +43,8 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 
 ### 冰的融化亮度 (IceMeltLightLevel)
 
+原版中,冰会在亮度11时融化
+
 - 类型: `int`
 - 默认值: `11`
 - 参考选项: `11`, `0`
@@ -55,3 +57,43 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 - 默认值: `false`
 - 分类: `MTS`, `SURVIVAL`
 - 在v0.0.3a加入
+
+### 冰不管怎么样都会融化成水 (IceMeltAlwaysWater)
+
+原版中,假如冰融化时下面没有方块,就会化成空气
+
+- 类型: `boolean`
+- 默认值: `false`
+- 分类: `MTS`, `SURVIVAL`
+- 在v0.0.4a加入
+
+### 橡木树苗长大后分叉的概率 (FancyOakTreeProbability)
+
+大橡树挺烦人的,要不ban了吧
+设置成100可以生成超多大橡树(bushi
+这个功能好像有点问题
+
+
+- 类型: `int`
+- 默认值: `10`
+- 参考选项: `100`, `10`, `0`
+- 分类: `MTS`, `SURVIVAL`
+- 在v0.0.4a加入
+
+### 树叶永远不会消失 (LeavesNeverDisappear)
+
+树叶那么可爱,怎么能消失呢?
+
+- 类型: `boolean`
+- 默认值: `false`
+- 分类: `MTS`, `SURVIVAL`
+- 在v0.0.4a加入
+
+### 树叶离原木多远会消失 (LeavesDisappearLogDistance)
+
+- 类型: `int`
+- 默认值: `7`
+- 参考选项: `7`, `10`
+- 分类: `MTS`, `SURVIVAL`
+- 在v0.0.4a加入
+

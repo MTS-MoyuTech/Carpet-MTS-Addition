@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "top.mtserver.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "Spawner.CatSpawnerMixin",
+    "ServerWorldMixin",
+    "Entity.FireworkRocketEntityMixin",
+    "Block.IceBlockMixin",
+    "Block.LeavesBlockMixin",
+    "OakSaplingGeneratorMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

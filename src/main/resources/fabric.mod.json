@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "carpet_mts_addition",
+  "version": "${version}",
+
+  "name": "Carpet MTS Addition",
+  "description": "",
+  "authors": [
+    "Braised_Loach"
+  ],
+  "contact": {
+    "homepage": "https://www.mtserver.top",
+    "sources": "https://github.com/MTS-MoyuTech/Carpet-MTS-Addition/issues"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/carpet_mts_Addition/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "top.mtserver.MTSCarpetMod"
+    ]
+  },
+  "mixins": [
+    "mts_carpet_mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "minecraft": "1.16.x",
+    "java": ">=16",
+    "carpet": "*"
+  },
+  "suggests": {
+  },
+  "custom": {
+    "modmenu": {
+      "parent": "carpet"
+    }
+  }
+}
