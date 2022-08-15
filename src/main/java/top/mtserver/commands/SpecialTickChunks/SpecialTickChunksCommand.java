@@ -2,6 +2,7 @@ package top.mtserver.commands.SpecialTickChunks;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.math.ChunkPos;
@@ -27,9 +28,10 @@ public class SpecialTickChunksCommand{
         dispatcher.register(literalargumentbuilder);
     }
 
-    public static int AddChunkPos(ServerCommandSource source, int ChunkX, int ChunkZ, int randomTickSpeed) {
+    public static int AddChunkPos(ServerCommandSource source, int ChunkX, int ChunkZ, int randomTickSpeed) throws CommandSyntaxException {
         SpecialTickChunk.SpecialTickChunks.put(new ChunkPos(ChunkX, ChunkZ), randomTickSpeed);
         System.out.println(SpecialTickChunk.SpecialTickChunks.get(new ChunkPos(ChunkX, ChunkZ)));
+        SendMessage.Out(source.getWorld(), source.getPlayer().getPlayerListName().toString(),true);
         SendMessage.Out(source.getWorld(), "在坐标" + ChunkX + "," + ChunkZ + "的区块以" + randomTickSpeed + "的数值加入特殊区块刻!", true);
         return 1;
     }

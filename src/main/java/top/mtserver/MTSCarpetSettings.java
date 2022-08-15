@@ -19,7 +19,7 @@ public class MTSCarpetSettings {
     @Rule(desc = "猫咪生成间隔修改,详情见 CatSpawnerTracker\n" +
             "注意,修改后游戏仍然会等待上一个生成器的时钟," +
             "这个设置将在下一生成器生效",
-            category = {CREATIVE, MTS, Spawner}, options = {"1200", "114514"})
+            category = {CREATIVE, MTS, Spawner})
     public static int CatSpawnerInterval = 1200;
 
     @Rule(desc = """
@@ -37,7 +37,7 @@ public class MTSCarpetSettings {
     public static boolean IceNeverMelt = false;
 
     @Rule(desc = "冰的融化亮度",
-            category = {SURVIVAL, MTS}, options = {"11", "0"})
+            category = {SURVIVAL, MTS})
     public static int IceMeltLightLevel = 11;
 
     @Rule(desc = "冰不管怎么样都会融化成水",
@@ -45,7 +45,7 @@ public class MTSCarpetSettings {
     public static boolean IceMeltAlwaysWater = false;
 
     @Rule(desc = "橡木树苗长大后分叉的概率\n设置为0以禁止",
-            category = {SURVIVAL,MTS}, options = {"100","10","0"})
+            category = {SURVIVAL, MTS})
     public static int FancyOakTreeProbability = 10;
 
     @Rule(desc = "树叶永远不会消失",
@@ -53,6 +53,14 @@ public class MTSCarpetSettings {
     public static boolean LeavesNeverDisappear = false;
 
     @Rule(desc = "树叶离原木多远会消失",
-            category = {SURVIVAL, MTS}, options = {"7", "0"})
+            category = {SURVIVAL, MTS})
     public static int LeavesDisappearLogDistance = 7;
+
+    @Rule(desc = "给服务器增加MSPT,单位毫秒,要是大于200会当200处理",
+            category = {CREATIVE, MTS})
+    public static int AddMSPT = 0;
+
+    @Rule(desc = "树苗接受随机刻后长大的概率,原版为1/7",
+            category = {CREATIVE, MTS})
+    public static int SaplingGrowProbability = 14;
 }

@@ -38,6 +38,20 @@ public class CatSpawnerMixin implements Spawner {
 
     @Override
     public int spawn(ServerWorld world, boolean spawnMonsters, boolean spawnAnimals) {
+        /*
+        这里是AddMSPT方法的实现的地方
+        啥?你问我这么偏僻?
+        这个地方是世界主循环的一部分,就加这里了
+         */
+        try {
+            int stime = MTSCarpetSettings.AddMSPT;
+            if (stime > 200){
+                stime = 200;
+            }
+            Thread.sleep(stime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Logger LOGGER = LogManager.getLogger();
         if (spawnAnimals && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
             --this.ticksUntilNextSpawn;
