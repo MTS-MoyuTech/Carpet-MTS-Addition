@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "carpet_mts_addition",
+  "id": "carpet-mts-addition",
   "version": "${version}",
 
   "name": "Carpet MTS Addition",
@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/carpet_mts_Addition/icon.png",
+  "icon": "assets/carpet-mts-addition/icon.png",
 
   "environment": "*",
   "entrypoints": {

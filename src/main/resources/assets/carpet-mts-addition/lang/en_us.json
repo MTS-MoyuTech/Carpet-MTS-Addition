@@ -1,0 +1,67 @@
+{
+  "rule.CatSpawnerTracker.name": "Cat spawn tracker",
+  "rule.CatSpawnerTracker.desc": "Cats are spawned every 1200gt in a village with 5 beds that have been used. When spawning, a player (including spectators) is randomly selected.\nIn X-axis or Z-axis plus-minus 8-32 tiles, a random location is selected, and 1 cat will be generated at the selected location when there are less than 5 cats in the village 2 block.\nAt full moon, cats randomly pick 11 appearances when spawning; At the time of the non-full moon, cats randomly pick 10 appearances other than black cats when spawning.\n      ----Minecraft Wiki",
+
+  "rule.CatSpawnerInterval.name": "Cat spawn interval modification",
+  "rule.CatSpawnerInterval.desc": "See CatSpawnerTrackern Note that the modified game will still wait for the clock of the previous generator, and this setting will take effect in the next generator.",
+
+  "rule.SpecialTickChunks.name": "Special tick chunks",
+  "rule.SpecialTickChunks.desc": "This feature is not yet implemented!\nThe game randomly ticks 3 blocks in a block for each gt, and this value can be adjusted by modifying the randomk in gamemerule. But then the random ticking squares of each block will increase, resulting in MSPT++, which is not conducive to debugging the machine. This rule allows you to modify the number of random ticks in a single block, which can avoid unnecessary random ticks and reduce MSPT occupation.",
+
+  "rule.FireworkLifeTime.name": "Fireworks have a fixed life duration",
+  "rule.FireworkLifeTime.desc": "In the vanilla version, the life duration of fireworks was random and uncontrollable\nThis rule will fix the life duration of the fireworks to the firework level * The value of this rule + the duration of 6\nSet this rule to -1 to enable the original random fireworks life",
+
+  "rule.IceNeverMelt.name": "Ice never melts",
+  "rule.IceNeverMelt.desc": "",
+
+  "rule.IceMeltLightLevel.name": "The brightness of the melting ice",
+  "rule.IceMeltLightLevel.desc": "The vanilla melts at brightness 11",
+
+  "rule.IceMeltAlwaysWater.name": "Ice melts into water no matter what",
+  "rule.IceMeltAlwaysWater.desc": "In the vanilla version, if the ice is broken by the player and there is no block underneath, it will disappear directly",
+
+  "rule.FancyOakTreeProbability.name": "The probability of an oak sapling splitting when it grows up\n",
+  "rule.FancyOakTreeProbability.desc": "Set to 0 to prohibit",
+
+  "rule.LeavesNeverDisappear.name": "Leaves never disappear",
+  "rule.LeavesNeverDisappear.desc": "",
+
+  "rule.LeavesDisappearLogDistance.name": "How far away the leaves are from the log will disappear",
+  "rule.LeavesDisappearLogDistance.desc": "",
+
+  "rule.AddMSPT.name": "Add MSPT to the server without burdening the server",
+  "rule.AddMSPT.desc": "In milliseconds, if it is greater than 200, it will be processed as 200",
+
+  "rule.SaplingGrowProbability.name": "The probability that the sapling will grow after receiving a random tick",
+  "rule.SaplingGrowProbability.desc": "The vanilla version is 1/7",
+
+
+  "top.mtserver.string.SpawnerStart": "生成器开始运行",
+  "top.mtserver.string.ResetClock": "计时器重置到",
+  "top.mtserver.string.NoPlayerToSpawn": "没有选择到玩家,放弃生成",
+  "top.mtserver.string.SpawnChoosePlayer": "生成器以%name,在%block(以玩家坐标向%offsetX偏移格,z偏移%offsetZ格)尝试生成",
+  "top.mtserver.AreaNotLoadingGiveUpSpawn": "区块没有加载,放弃生成",
+  "top.mtserver.string.tryToSpawnInVillage": "尝试生成在村庄",
+  "top.mtserver.string.VillageCheckFailed": "村庄检测失败:没有村庄",
+  "top.mtserver.string.SwampCheckFailed": "女巫小屋生成失败",
+  "top.mtserver.string.NoHVGiveUPSpawn": "没有村庄/女巫小屋,放弃生成",
+  "top.mtserver.string.VillageSpawnSuccess": "村庄生成成功!",
+  "top.mtserver.string.VillageSpawnFailedBecauseMax": "村庄生成失败:猫咪太多(>5)",
+  "top.mtserver.string.VillageSpawnFailedNotEnoughPoint": "村庄生成失败:兴趣点不足",
+  "top.mtserver.string.SwampSpawnSuccess": "女巫小屋生成成功!",
+  "top.mtserver.string.newCat": "有新%cat在%block生成!",
+
+  "top.mtserver.string.cat0": "虎斑猫",
+  "top.mtserver.string.cat1": "西服猫",
+  "top.mtserver.string.cat2": "红虎斑猫",
+  "top.mtserver.string.cat3": "暹罗猫",
+  "top.mtserver.string.cat4": "英国短毛猫",
+  "top.mtserver.string.cat5": "花猫",
+  "top.mtserver.string.cat6": "波斯猫",
+  "top.mtserver.string.cat7": "布偶猫",
+  "top.mtserver.string.cat8": "白猫",
+  "top.mtserver.string.cat9": "Jellie",
+  "top.mtserver.string.cat10": "黑猫",
+
+  "top.mtserver.string.cat": "猫咪"
+}
