@@ -5,11 +5,11 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "Spawner.CatSpawnerMixin",
-    "ServerWorldMixin",
     "Entity.FireworkRocketEntityMixin",
     "Block.IceBlockMixin",
     "Block.LeavesBlockMixin",
-    "OakSaplingGeneratorMixin"
+    "OakSaplingGeneratorMixin",
+    "ServerWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1

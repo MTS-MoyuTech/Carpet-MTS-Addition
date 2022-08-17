@@ -143,7 +143,7 @@ public class CatSpawnerMixin implements Spawner {
             catEntity.refreshPositionAndAngles(pos, 0.0F, 0.0F);
             world.spawnEntityAndPassengers(catEntity);
 
-            MessageUtil.StringOut(world, MessageUtil.getLang("top.mtserver.string.newCat").replace("%cat", CatType.getCatType(catEntity.getCatType())).replace("%block", ToString.BlockPosToString(pos)), IsLooking);
+            MessageUtil.StringOut(world, MessageUtil.getLang("top.mtserver.cat.newCat").replace("%cat", CatType.getCatType(catEntity.getCatType())).replace("%block", ToString.BlockPosToString(pos)), IsLooking);
             //"有新" + CatType.getCatType(catEntity.getCatType()) + "在" + ToString.BlockPosToString(pos) + "生成!"
             return 1;
         }

@@ -1,5 +1,4 @@
 # Carpet MTS Addition
-## 这个项目主要由[泥鳅](https://github.com/bili-08A04-NQ3)维护&更新
 #### On Minecraft 1.16.5
 [![License](https://img.shields.io/github/license/Rene8028/carpet-iee-addition.svg)](http://www.gnu.org/licenses/lgpl-3.0.html)
 [![Issues](https://img.shields.io/github/issues/Rene8028/carpet-iee-addition.svg)](https://github.com/Rene8028/carpet-iee-addition/issues)
@@ -117,3 +116,17 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 - 参考选项: `14`, `100`
 - 分类: `MTS`, `SURVIVAL`
 - 在v0.0.5a加入
+
+### 特殊区块刻 (SpecialTickChunks)
+
+- 游戏在每gt都会给一个区块中的3个方块随机刻,修改gamerule中的randomtick可调整这一数值.但是这样每一个区块的随机刻方块都会增加,导致MSPT++,不利于调试机器.这一个规则可以让你修改单个区块的随机刻方块数量,能避免不必要的随机刻,减少MSPT占用.
+- 注意,贸然提高区块刻是不文明的行为,即使调整单区块的随机刻,如果过高,依然会引起卡顿
+- 经过测试,全局1024随机刻的mspt为4.9,单个区块1024随机刻的mspt为3.5(单人)
+- 开启这个功能后,使用/specialtickchunk 来操作特殊区块刻
+- /specialtickchunk add (ChunkX) (ChunkZ) (Random Tick Speed):给特殊区块刻添加区块,原版的Random Tick Speed为3
+- /specialtickchunk remove (ChunkX) (ChunkZ) 把某个区块移除特殊区块刻
+- /specialtickchunk list显示当前特殊区块刻列表
+- 默认值: `3`
+- 参考选项: `3`, `4096`
+- 分类: `MTS`, `SURVIVAL`
+- 在v0.1.2a加入

@@ -9,6 +9,7 @@ import net.minecraft.text.LiteralText;
 import top.mtserver.MTSCarpetServer;
 
 import java.util.List;
+import java.util.Map;
 
 public class MessageUtil {
     public static BaseText s(Object text) {
@@ -49,9 +50,15 @@ public class MessageUtil {
 
     public static String getLang(String key){
         if (new MTSCarpetServer().canHasTranslations(CarpetSettings.language).containsKey(key)){
-            return new MTSCarpetServer().canHasTranslations(CarpetSettings.language).get(key);
+            MTSCarpetServer mtsCarpetServer = new MTSCarpetServer();
+            Map<String,String> Vme50 = mtsCarpetServer.canHasTranslations(CarpetSettings.language);
+            if (Vme50 == null){
+                return "";
+            } else {
+                return mtsCarpetServer.canHasTranslations(CarpetSettings.language).get(key);
+            }
         }
-        MTSCarpetServer.LOGGER.error(key + " doesn't exist in " + CarpetSettings.language + ".json");
+        MTSCarpetServer.LOGGER.error("key: " + key + " doesn't exist in " + CarpetSettings.language + ".json");
         return "";
     }
 }

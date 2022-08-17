@@ -7,6 +7,7 @@ import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mojang.brigadier.CommandDispatcher;
+import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
@@ -20,7 +21,7 @@ import java.util.Map;
 import java.util.Objects;
 
 @SuppressWarnings("UnstableApiUsage")
-public class MTSCarpetServer implements CarpetExtension {
+public class MTSCarpetServer implements CarpetExtension, ModInitializer {
 	public static final String fancyName = "Carpet MTS Addition";
 	public static final Logger LOGGER = LogManager.getLogger(fancyName);
 	public static MinecraftServer minecraft_server;
@@ -43,9 +44,6 @@ public class MTSCarpetServer implements CarpetExtension {
 
 	@Override
 	public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher){
-		//#else
-		//$$ public void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
-		//#endif
 		SpecialTickChunksCommand.register(dispatcher);
 	}
 
@@ -61,7 +59,11 @@ public class MTSCarpetServer implements CarpetExtension {
 			return null;
 		}
 		Gson gson = new GsonBuilder().enableComplexMapKeySerialization().create();
-		return gson.fromJson(dataJSON, new TypeToken<Map<String, String>>() {
-		}.getType());
+		return gson.fromJson(dataJSON, new TypeToken<Map<String, String>>(){}.getType());
+	}
+
+	@Override
+	public void onInitialize() {
+
 	}
 }
