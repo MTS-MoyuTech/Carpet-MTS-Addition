@@ -70,5 +70,7 @@
   "top.mtserver.command.SpecialTickChunks.RemoveChunkPosSuccess": "在坐标%ChunkX,%ChunkZ的区块已移出特殊区块刻!",
   "top.mtserver.command.SpecialTickChunks.RemoveChunkPosFailed": "在坐标%ChunkX,%ChunkZ的区块不在特殊区块刻,无法移除!",
   "top.mtserver.command.SpecialTickChunks.warn": "注意,你没有开启特殊区块刻功能,现在的修改会等你开启后生效",
-  "top.mtserver.command.SpecialTickChunks.list": "以加入的特殊区块刻列表如下:"
+  "top.mtserver.command.SpecialTickChunks.list": "以加入的特殊区块刻列表如下:",
+
+  "top.mtserver.command.SetBlockAfterTimeCommand.SetBlockAfter": "方块%block将会在%timegt后在%pos放置!"
 }

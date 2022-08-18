@@ -13,6 +13,7 @@ import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import top.mtserver.commands.SetBlockAfterTime.SetBlockAfterTimeCommand;
 import top.mtserver.commands.SpecialTickChunks.SpecialTickChunksCommand;
 
 import java.io.IOException;
@@ -45,6 +46,7 @@ public class MTSCarpetServer implements CarpetExtension, ModInitializer {
 	@Override
 	public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher){
 		SpecialTickChunksCommand.register(dispatcher);
+		SetBlockAfterTimeCommand.register(dispatcher);
 	}
 
 	@Override

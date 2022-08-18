@@ -6,7 +6,7 @@
   "rule.CatSpawnerInterval.desc": "See CatSpawnerTrackern Note that the modified game will still wait for the clock of the previous generator, and this setting will take effect in the next generator.",
 
   "rule.SpecialTickChunks.name": "Special tick chunks",
-  "rule.SpecialTickChunks.desc": "This feature is not yet implemented!\nThe game randomly ticks 3 blocks in a block for each gt, and this value can be adjusted by modifying the randomk in gamemerule. But then the random ticking squares of each block will increase, resulting in MSPT++, which is not conducive to debugging the machine. This rule allows you to modify the number of random ticks in a single block, which can avoid unnecessary random ticks and reduce MSPT occupation.",
+  "rule.SpecialTickChunks.desc": "The game randomly ticks 3 blocks in a block for each gt, and this value can be adjusted by modifying the randomk in gamemerule. But then the random ticking squares of each block will increase, resulting in MSPT++, which is not conducive to debugging the machine. This rule allows you to modify the number of random ticks in a single block, which can avoid unnecessary random ticks and reduce MSPT occupation.",
 
   "rule.FireworkLifeTime.name": "Fireworks have a fixed life duration",
   "rule.FireworkLifeTime.desc": "In the vanilla version, the life duration of fireworks was random and uncontrollable\nThis rule will fix the life duration of the fireworks to the firework level * The value of this rule + the duration of 6\nSet this rule to -1 to enable the original random fireworks life",
@@ -68,5 +68,7 @@
   "top.mtserver.command.SpecialTickChunks.RemoveChunkPosSuccess": "The chunk at the pos %ChunkX , %ChunkZ have been moved out special chunk tick!",
   "top.mtserver.command.SpecialTickChunks.RemoveChunkPosFailed": "At the coordinates %ChunkX, the chunk of %ChunkZ is not exist in special chunk tick!!",
   "top.mtserver.command.SpecialTickChunks.warn": "Note that you did not turn on the special chunk tick on, and the current changes will take effect when you turn it on",
-  "top.mtserver.command.SpecialTickChunks.list": "The list of special chunk tick to join is as follows:"
+  "top.mtserver.command.SpecialTickChunks.list": "The list of special chunk tick to join is as follows:",
+
+  "top.mtserver.command.SetBlockAfterTimeCommand.SetBlockAfter": "Blocks %block will be placed after %timegt at %pos!"
 }

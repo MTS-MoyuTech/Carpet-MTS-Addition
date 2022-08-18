@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import top.mtserver.utils.SpecialTickChunk;
+import top.mtserver.utils.CommandDatas;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -37,7 +37,7 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
             cancellable = true //表明我们可以中途取消(return)这个方法
     )
     public void tickChunk(WorldChunk chunk, int randomTickSpeed, CallbackInfo ci) {//Change randomTickSpeed
-        randomTickSpeed = SpecialTickChunk.get(chunk);
+        randomTickSpeed = CommandDatas.getSpecialTickChunks(chunk);
         ChunkPos chunkPos = chunk.getPos();
         boolean bl = this.isRaining();
         int i = chunkPos.getStartX();
