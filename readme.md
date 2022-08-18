@@ -126,7 +126,6 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 - /specialtickchunk add (ChunkX) (ChunkZ) (Random Tick Speed):给特殊区块刻添加区块,原版的Random Tick Speed为3
 - /specialtickchunk remove (ChunkX) (ChunkZ) 把某个区块移除特殊区块刻
 - /specialtickchunk list显示当前特殊区块刻列表
-- 默认值: `3`
-- 参考选项: `3`, `4096`
+- 默认值: `false`
 - 分类: `MTS`, `SURVIVAL`
 - 在v0.1.2a加入
