@@ -5,6 +5,7 @@
 [![Parent](https://img.shields.io/badge/Parent-fabric--carpet-blue)](https://github.com/gnembon/fabric-carpet)
 
 ## 这是一个 [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabric-carpet) 的扩展 mod,主要用于调试机器
+主要由[泥鳅](https://github.com/bili-08A04-NQ3) (bili-08A04-NQ3)
 
 ### Alpha版本,功能很少(
 
