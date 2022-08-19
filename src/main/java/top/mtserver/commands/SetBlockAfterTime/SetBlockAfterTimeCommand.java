@@ -9,6 +9,7 @@ import net.minecraft.command.argument.BlockStateArgumentType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.math.BlockPos;
+import top.mtserver.MTSCarpetServer;
 import top.mtserver.utils.CommandDatas;
 import top.mtserver.utils.StringUtils.MessageUtil;
 import top.mtserver.utils.StringUtils.ToString;
@@ -27,6 +28,7 @@ public class SetBlockAfterTimeCommand {
     }
 
     private static int AddSetblock(ServerCommandSource source, BlockPos pos, BlockStateArgument block, int WaitTime) {
+        MTSCarpetServer.Log("Try to SetBlock %block in %pos after %WaitTime gt".replace("%block", block.getBlockState().getBlock().toString().replace("Block{","").replace("}","").replace("%pos",ToString.BlockPosToString(pos).replace("%WaitTime",String.valueOf(WaitTime)))));
         MessageUtil.StringOut(source.getWorld(),MessageUtil.getLang("top.mtserver.command.SetBlockAfterTimeCommand.SetBlockAfter").replace("%block",block.getBlockState().getBlock().toString()).replace("%pos", ToString.BlockPosToString(pos)).replace("%time",String.valueOf(WaitTime)).replace("Block{","").replace("}",""),true);
         CommandDatas.SetBlockAfterTimeDatas.add(new CommandDatas.SetBlockAfterTimeData(source, pos, block, WaitTime));
         return 1;

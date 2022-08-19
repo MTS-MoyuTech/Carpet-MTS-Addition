@@ -1,14 +1,18 @@
 package top.mtserver.mixins.Block;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.IceBlock;
-import net.minecraft.block.TransparentBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import top.mtserver.MTSCarpetServer;
 import top.mtserver.MTSCarpetSettings;
 
 import java.util.Random;
@@ -35,4 +39,19 @@ public class IceBlockMixin extends TransparentBlock {
         }
     }
 
+    @Override
+    public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
+        super.afterBreak(world, player, pos, state, blockEntity, stack);
+        if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0) {
+            if (world.getDimension().isUltrawarm()) {
+                world.removeBlock(pos, false);
+                return;
+            }
+
+            Material material = world.getBlockState(pos.down()).getMaterial();
+            if ((material.blocksMovement() || material.isLiquid() || MTSCarpetSettings.IceMeltAlwaysWater)) {
+                world.setBlockState(pos, Blocks.WATER.getDefaultState());
+            }
+        }
+    }
 }

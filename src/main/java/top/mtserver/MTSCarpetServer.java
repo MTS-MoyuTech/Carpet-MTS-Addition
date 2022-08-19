@@ -27,6 +27,12 @@ public class MTSCarpetServer implements CarpetExtension, ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger(fancyName);
 	public static MinecraftServer minecraft_server;
 
+	public static void Log(String CrazyXinQi4Vme50){
+		if (MTSCarpetSettings.MTSDebugMod){
+			LOGGER.info(CrazyXinQi4Vme50);
+		}
+	}
+
 	public static void noop() { }
 
 	static {

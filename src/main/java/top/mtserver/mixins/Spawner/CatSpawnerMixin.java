@@ -19,6 +19,7 @@ import net.minecraft.world.poi.PointOfInterestType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
+import top.mtserver.MTSCarpetServer;
 import top.mtserver.MTSCarpetSettings;
 import top.mtserver.utils.StringUtils.MessageUtil;
 import top.mtserver.utils.StringUtils.ToString;
@@ -51,7 +52,6 @@ public class CatSpawnerMixin implements Spawner {
         //World Loop On
         MTSWorldLoop.loop();
         //World Loop Off
-        Logger LOGGER = LogManager.getLogger();
         if (spawnAnimals && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
             --this.ticksUntilNextSpawn;
             if (this.ticksUntilNextSpawn <= 0) {

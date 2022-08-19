@@ -46,6 +46,11 @@ public class CommandDatas {
             }
             return false;
         }
+
+        public SetBlockAfterTimeData WaitTimeMin(){
+            --waitTime;
+            return this;
+        }
     }
 
     public static ArrayList<SetBlockAfterTimeData> SetBlockAfterTimeDatas = new ArrayList<>();
@@ -54,7 +59,7 @@ public class CommandDatas {
         ArrayList<SetBlockAfterTimeData> F = new ArrayList<>();
         for (SetBlockAfterTimeData setBlockAfterTimeData:SetBlockAfterTimeDatas){
             if (!setBlockAfterTimeData.tick()){
-                F.add(setBlockAfterTimeData);
+                F.add(setBlockAfterTimeData.WaitTimeMin());
             }
         }
         SetBlockAfterTimeDatas = F;
