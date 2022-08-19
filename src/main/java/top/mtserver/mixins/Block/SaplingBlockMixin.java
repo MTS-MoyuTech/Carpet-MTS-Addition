@@ -29,8 +29,8 @@ public abstract class SaplingBlockMixin extends PlantBlock implements Fertilizab
     }
 
     public void generate(ServerWorld world, BlockPos pos, BlockState state, Random random) {
-        if ((Integer)state.get(STAGE) == 0) {
-            world.setBlockState(pos, (BlockState)state.cycle(STAGE), 4);
+        if (state.get(STAGE) == 0) {
+            world.setBlockState(pos, state.cycle(STAGE), 4);
         } else {
             this.generate.generate(world, world.getChunkManager().getChunkGenerator(), pos, state, random);
         }

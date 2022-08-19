@@ -2,7 +2,6 @@ package top.mtserver.commands.SpecialTickChunks;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.math.ChunkPos;
@@ -27,17 +26,17 @@ public class SpecialTickChunksCommand {
                         .executes((c) -> AddChunkPos(c.getSource(), getInteger(c, "ChunkX"), getInteger(c, "ChunkZ"), getInteger(c, "randomTickSpeed")))))))
                 .then(CommandManager.literal("remove")
                         .then(CommandManager.argument("ChunkX", integer())
-                        .then(CommandManager.argument("ChunkZ", integer()))
-                        .executes((c) -> RemoveChunkPos(c.getSource(), getInteger(c, "ChunkX"), getInteger(c, "ChunkZ")))))
+                        .then(CommandManager.argument("ChunkZ", integer())
+                        .executes((c) -> RemoveChunkPos(c.getSource(), getInteger(c, "ChunkX"), getInteger(c, "ChunkZ"))))))
                 .then(CommandManager.literal("list")
-                        .executes((c) -> ListCHunkPos(c.getSource())));
+                        .executes((c) -> ListChunkPos(c.getSource())));
 
         dispatcher.register(literalargumentbuilder);
     }
 
-    public static int AddChunkPos(ServerCommandSource source, int ChunkX, int ChunkZ, int randomTickSpeed) throws CommandSyntaxException {
-        CommandDatas.SpecialTickChunkData.put(new ChunkPos(ChunkX, ChunkZ), randomTickSpeed);
-        System.out.println(CommandDatas.SpecialTickChunkData.get(new ChunkPos(ChunkX, ChunkZ)));
+    public static int AddChunkPos(ServerCommandSource source, int ChunkX, int ChunkZ, int randomTickSpeed) {
+        ChunkPos chunkPos = new ChunkPos(ChunkX, ChunkZ);
+        CommandDatas.SpecialTickChunkData.put(chunkPos, randomTickSpeed);
         if (!MTSCarpetSettings.SpecialTickChunks){
             MessageUtil.Out(source.getWorld(),"top.mtserver.command.SpecialTickChunks.warn",true);
         }
@@ -49,16 +48,16 @@ public class SpecialTickChunksCommand {
     public static int RemoveChunkPos(ServerCommandSource source, int ChunkX, int ChunkZ) {
         ChunkPos chunkPos = new ChunkPos(ChunkX, ChunkZ);
         MTSCarpetServer.Log("Remove %x %z on STC".replace("%x",String.valueOf(ChunkX)).replace("%z",String.valueOf(ChunkZ)));
-        if (!CommandDatas.SpecialTickChunkData.containsKey(chunkPos)) {
-            MessageUtil.StringOut(source.getWorld(),  MessageUtil.getLang("top.mtserver.command.SpecialTickChunks.RemoveChunkPosSuccess").replace("ChunkX",String.valueOf(ChunkX)).replace("ChunkZ",String.valueOf(ChunkZ)), true);
-        } else {
+        if (CommandDatas.SpecialTickChunkData.containsKey(chunkPos)) {
             CommandDatas.SpecialTickChunkData.remove(new ChunkPos(ChunkX, ChunkZ));
-            MessageUtil.StringOut(source.getWorld(), MessageUtil.getLang("top.mtserver.command.SpecialTickChunks.RemoveChunkPosFailed").replace("ChunkX",String.valueOf(ChunkX)).replace("ChunkZ",String.valueOf(ChunkZ)), true);
+            MessageUtil.StringOut(source.getWorld(),  MessageUtil.getLang("top.mtserver.command.SpecialTickChunks.RemoveChunkPosSuccess").replace("%ChunkX",String.valueOf(ChunkX)).replace("%ChunkZ",String.valueOf(ChunkZ)), true);
+        } else {
+            MessageUtil.StringOut(source.getWorld(), MessageUtil.getLang("top.mtserver.command.SpecialTickChunks.RemoveChunkPosFailed").replace("%ChunkX",String.valueOf(ChunkX)).replace("%ChunkZ",String.valueOf(ChunkZ)), true);
         }
         return 1;
     }
 
-    public static int ListCHunkPos(ServerCommandSource source){
+    public static int ListChunkPos(ServerCommandSource source){
         MessageUtil.StringOut(source.getWorld(),MessageUtil.getLang("top.mtserver.command.SpecialTickChunks.list"),true);
         for (ChunkPos pos: CommandDatas.SpecialTickChunkData.keySet()){
            MessageUtil.StringOut(source.getWorld(),"Chunk Pos" + pos.getRegionX() + "," + pos.getRegionZ() + "   Speed:" + CommandDatas.SpecialTickChunkData.get(pos),true);

@@ -5,7 +5,6 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -16,10 +15,7 @@ import net.minecraft.world.gen.Spawner;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.poi.PointOfInterestStorage;
 import net.minecraft.world.poi.PointOfInterestType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
-import top.mtserver.MTSCarpetServer;
 import top.mtserver.MTSCarpetSettings;
 import top.mtserver.utils.StringUtils.MessageUtil;
 import top.mtserver.utils.StringUtils.ToString;
@@ -32,10 +28,6 @@ import java.util.Random;
 @Mixin(CatSpawner.class)
 public class CatSpawnerMixin implements Spawner {
     private int ticksUntilNextSpawn;
-
-    public void SpawnNow() {
-        this.ticksUntilNextSpawn = 0;
-    }
 
     @Override
     public int spawn(ServerWorld world, boolean spawnMonsters, boolean spawnAnimals) {
@@ -96,7 +88,6 @@ public class CatSpawnerMixin implements Spawner {
 
     private int spawnInHouse(ServerWorld world, BlockPos pos) {
 
-        int i = 48;
         boolean IsLooking = MTSCarpetSettings.CatSpawnerTracker;
         if (world.getPointOfInterestStorage().count(PointOfInterestType.HOME.getCompletionCondition(), pos, 48, PointOfInterestStorage.OccupationStatus.IS_OCCUPIED) > 4L) {
             List<CatEntity> list = world.getNonSpectatingEntities(CatEntity.class, (new Box(pos)).expand(48.0D, 8.0D, 48.0D));
@@ -114,7 +105,6 @@ public class CatSpawnerMixin implements Spawner {
     }
 
     private int spawnInSwampHut(ServerWorld world, BlockPos pos) {
-        int i = 16;
         boolean IsLooking = MTSCarpetSettings.CatSpawnerTracker;
         List<CatEntity> list = world.getNonSpectatingEntities(CatEntity.class, (new Box(pos)).expand(16.0D, 8.0D, 16.0D));
         int a = this.spawn(pos, world);

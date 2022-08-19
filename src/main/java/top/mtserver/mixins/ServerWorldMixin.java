@@ -51,14 +51,14 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
                 LocalDifficulty localDifficulty = this.getLocalDifficulty(blockPos);
                 boolean bl2 = this.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING) && this.random.nextDouble() < (double) localDifficulty.getLocalDifficulty() * 0.01D;
                 if (bl2) {
-                    SkeletonHorseEntity skeletonHorseEntity = (SkeletonHorseEntity) EntityType.SKELETON_HORSE.create(this);
+                    SkeletonHorseEntity skeletonHorseEntity = EntityType.SKELETON_HORSE.create(this);
                     skeletonHorseEntity.setTrapped(true);
                     skeletonHorseEntity.setBreedingAge(0);
                     skeletonHorseEntity.setPosition(blockPos.getX(), blockPos.getY(), blockPos.getZ());
                     this.spawnEntity(skeletonHorseEntity);
                 }
 
-                LightningEntity lightningEntity = (LightningEntity) EntityType.LIGHTNING_BOLT.create(this);
+                LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(this);
                 lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos));
                 lightningEntity.setCosmetic(bl2);
                 this.spawnEntity(lightningEntity);
@@ -86,10 +86,8 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
         profiler.swap("tickBlocks");
         if (randomTickSpeed > 0) {
             ChunkSection[] var17 = chunk.getSectionArray();
-            int var19 = var17.length;
 
-            for (int var21 = 0; var21 < var19; ++var21) {
-                ChunkSection chunkSection = var17[var21];
+            for (ChunkSection chunkSection : var17) {
                 if (chunkSection != WorldChunk.EMPTY_SECTION && chunkSection.hasRandomTicks()) {
                     int k = chunkSection.getYOffset();
 
@@ -113,17 +111,14 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
         }
 
         profiler.pop();
-        return;
     }
 
     public BlockPos getSurface(BlockPos pos) {
         BlockPos blockPos = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, pos);
         Box box = (new Box(blockPos, new BlockPos(blockPos.getX(), this.getHeight(), blockPos.getZ()))).expand(3.0D);
-        List<LivingEntity> list = this.getEntitiesByClass(LivingEntity.class, box, (entity) -> {
-            return entity != null && entity.isAlive() && this.isSkyVisible(entity.getBlockPos());
-        });
+        List<LivingEntity> list = this.getEntitiesByClass(LivingEntity.class, box, (entity) -> entity != null && entity.isAlive() && this.isSkyVisible(entity.getBlockPos()));
         if (!list.isEmpty()) {
-            return ((LivingEntity) list.get(this.random.nextInt(list.size()))).getBlockPos();
+            return list.get(this.random.nextInt(list.size())).getBlockPos();
         } else {
             if (blockPos.getY() == -1) {
                 blockPos = blockPos.up(2);

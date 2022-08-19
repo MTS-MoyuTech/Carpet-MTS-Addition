@@ -7,14 +7,11 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.BlockPos;;
-import org.lwjgl.system.CallbackI;
+import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import top.mtserver.MTSCarpetSettings;
 
 import java.util.Random;
-
-import static net.minecraft.block.Block.dropStacks;
 
 @Mixin(LeavesBlock.class)
 public class LeavesBlockMixin extends Block {
@@ -26,7 +23,7 @@ public class LeavesBlockMixin extends Block {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if ((!(Boolean)state.get(PERSISTENT) && (Integer)state.get(DISTANCE) == MTSCarpetSettings.LeavesDisappearLogDistance) && !MTSCarpetSettings.LeavesNeverDisappear) {
+        if ((!(Boolean)state.get(PERSISTENT) && state.get(DISTANCE) == MTSCarpetSettings.LeavesDisappearLogDistance) && !MTSCarpetSettings.LeavesNeverDisappear) {
             dropStacks(state, world, pos);
             world.removeBlock(pos, false);
         }
