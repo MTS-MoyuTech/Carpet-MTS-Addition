@@ -9,7 +9,7 @@
   "rule.SpecialTickChunks.desc": "游戏在每gt都会给一个区块中的3个方块随机刻,修改gamerule中的randomtick可调整这一数值.但是这样每一个区块的随机刻方块都会增加,导致MSPT++,不利于调试机器.这一个规则可以让你修改单个区块的随机刻方块数量,能避免不必要的随机刻,减少MSPT占用.\n注意,贸然提高区块刻是不文明的行为,即使调整单区块的随机刻,如果过高,依然会引起卡顿",
 
   "rule.FireworkLifeTime.name": "烟花固定生命时长",
-  "rule.FireworkLifeTime.desc": "原版中,烟花的生命时长是随机的,无法控制\n这条规则会把烟花的生命时长固定成 烟花等级 * 这条规则的数值 + 6 的时长\n将这条规则设置为-1以启用原版随机烟花生命",
+  "rule.FireworkLifeTime.desc": "原版中,烟花的生命时长是随机的,无法控制\n这条规则会把烟花的生命时长固定成 (烟花等级 + 1) * 这条规则的数值 + 6 的时长\n将这条规则设置为-1以启用原版随机烟花生命",
 
   "rule.IceNeverMelt.name": "冰永远都不会融化",
   "rule.IceNeverMelt.desc": "",
