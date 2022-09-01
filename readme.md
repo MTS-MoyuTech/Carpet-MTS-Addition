@@ -114,7 +114,6 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 
 - 类型: `int`
 - 默认值: `14`
-- 参考选项: `14`, `100`
 - 分类: `MTS`, `SURVIVAL`
 - 在v0.0.5a加入
 
@@ -129,7 +128,7 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 - /specialtickchunk add (BlockPos) (Random Tick Speed):给特殊区块刻添加区块,原版的Random Tick Speed为3
 - /specialtickchunk remove (BlockPos) (ChunkZ) 把某个区块移除特殊区块刻
 - /specialtickchunk list显示当前特殊区块刻列表
-- 默认值: `3`
+- 默认值: `true`
 - 参考选项: `3`, `4096`
 - 分类: `MTS`, `SURVIVAL`
 - 在v0.1.2a加入
