@@ -11,11 +11,13 @@ import net.minecraft.util.math.Box;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.gen.CatSpawner;
-import net.minecraft.world.gen.Spawner;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.poi.PointOfInterestStorage;
 import net.minecraft.world.poi.PointOfInterestType;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import top.mtserver.MTSCarpetSettings;
 import top.mtserver.utils.StringUtils.MessageUtil;
 import top.mtserver.utils.StringUtils.ToString;
@@ -26,11 +28,14 @@ import java.util.List;
 import java.util.Random;
 
 @Mixin(CatSpawner.class)
-public class CatSpawnerMixin implements Spawner {
+public class CatSpawnerMixin {
     private int ticksUntilNextSpawn;
 
-    @Override
-    public int spawn(ServerWorld world, boolean spawnMonsters, boolean spawnAnimals) {
+    @Inject(method = "spawn",
+            at = @At("HEAD"),
+            cancellable = true
+    )
+    public int spawn(ServerWorld world, boolean spawnMonsters, boolean spawnAnimals, CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
         /*
         这里是AddMSPT方法的实现的地方
         啥?你问我这么偏僻?
@@ -40,6 +45,10 @@ public class CatSpawnerMixin implements Spawner {
         ---v0.1.4的话
         由于这里太方便了
         我决定把整个Carpet MTS Addition的世界循环防这里
+         */
+        /*
+        为什么我的StringOut和Out是混着用的
+        恼
          */
         //World Loop On
         MTSWorldLoop.loop();
@@ -52,7 +61,7 @@ public class CatSpawnerMixin implements Spawner {
                 MessageUtil.StringOut(world, ToString.SpawnerStartRunning(ToString.Cat) + ToString.ResetSpawnClock(this.ticksUntilNextSpawn), IsLooking);
                 PlayerEntity playerEntity = world.getRandomAlivePlayer();
                 if (playerEntity == null) {
-                    MessageUtil.Out(world, ToString.NoPlayerToSpawn, IsLooking);
+                    MessageUtil.StringOut(world, ToString.NoPlayerToSpawn, IsLooking);
                 } else {
                     Random random = world.random;
                     int i = (8 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);

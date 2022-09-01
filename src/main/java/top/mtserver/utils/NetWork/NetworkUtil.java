@@ -1,5 +1,7 @@
 package top.mtserver.utils.NetWork;
 
+import top.mtserver.MTSCarpetServer;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -80,7 +82,7 @@ public class NetworkUtil {
         return FinalNames;
     }
 
-    private static String getUUID(String name) {
+    public static String getUUID(String name) {
         // 我草泥马,json数据咋也不能处理,妈蛋
         // 硬核解析开始
         return doGet("https://api.mojang.com/users/profiles/minecraft/%name".replace("%name",name)).replace("{","").replace("}","").replace("\"","").split(",")[1].split(":")[1];
@@ -92,7 +94,7 @@ public class NetworkUtil {
         try{
             UUID = getUUID(Name);
         } catch (Exception e){
-            e.printStackTrace();
+            MTSCarpetServer.Log("Can't get player data from Budjump api");
         }
         return getNames(UUID);
     }

@@ -40,7 +40,7 @@
   "top.mtserver.cat.ResetClock": "The timer resets to",
   "top.mtserver.cat.NoPlayerToSpawn": "No selection to the player, discard spawn",
   "top.mtserver.cat.SpawnChoosePlayer": "The generator attempts to generate in %name, at %block (offset by player coordinates to %offsetX, z offset %offsetZ).",
-  "top.mtserver.AreaNotLoadingGiveUpSpawn": "The chunks are not loaded, the spawn is abandoned",
+  "top.mtserver.cat.AreaNotLoadingGiveUpSpawn": "The chunks are not loaded, the spawn is abandoned",
   "top.mtserver.cat.tryToSpawnInVillage": "Try to spawn in the village",
   "top.mtserver.cat.VillageCheckFailed": "Village detection failed: No villages",
   "top.mtserver.cat.SwampCheckFailed": "Witch Hut spawn failed",

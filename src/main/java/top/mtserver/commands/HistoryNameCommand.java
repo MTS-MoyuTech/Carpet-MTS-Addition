@@ -5,7 +5,8 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
-import top.mtserver.utils.NetWork.NetWorkThread;
+import top.mtserver.MTSCarpetServer;
+import top.mtserver.utils.NetWork.HistoryNameThread;
 
 public class HistoryNameCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
@@ -19,7 +20,8 @@ public class HistoryNameCommand {
     }
 
     private static int execute(ServerCommandSource source, String name) {
-        Thread thread = new NetWorkThread(source,name);
+        MTSCarpetServer.Log("Getting player %name's history name".replace("%name",name));
+        Thread thread = new HistoryNameThread(source,name);
         thread.start();
         return 1;
     }

@@ -2,9 +2,8 @@ package top.mtserver;
 
 import carpet.settings.Rule;
 
-import java.lang.annotation.Repeatable;
-
-import static carpet.settings.RuleCategory.*;
+import static carpet.settings.RuleCategory.CREATIVE;
+import static carpet.settings.RuleCategory.SURVIVAL;
 
 public class MTSCarpetSettings {
     public static final String MTS = "MTS";
@@ -16,12 +15,12 @@ public class MTSCarpetSettings {
     public static boolean CatSpawnerTracker = false;
 
     @Rule(
-            desc = "See CatSpawnerTrackern Note that the modified game will still wait for the clock of the previous generator, and this setting will take effect in the next generator.",
+            desc = "See CatSpawnerTracker Note that the modified game will still wait for the clock of the previous generator, and this setting will take effect in the next generator.",
             category = {CREATIVE, MTS, Spawner})
     public static int CatSpawnerInterval = 1200;
 
     @Rule(
-            desc = "STC:The game randomly ticks 3 blocks in a block for each gt, and this value can be adjusted by modifying the randomk in gamemerule. But then the random ticking squares of each block will increase, resulting in MSPT++, which is not conducive to debugging the machine. This rule allows you to modify the number of random ticks in a single block, which can avoid unnecessary random ticks and reduce MSPT occupation.",
+            desc = "STC:The game randomly ticks 3 blocks in a block for each gt, and this value can be adjusted by modifying the random in gamerule. But then the random ticking squares of each block will increase, resulting in MSPT++, which is not conducive to debugging the machine. This rule allows you to modify the number of random ticks in a single block, which can avoid unnecessary random ticks and reduce MSPT occupation.",
             category = {CREATIVE, MTS, Spawner})
     public static boolean SpecialTickChunks = false;
 
@@ -75,4 +74,10 @@ public class MTSCarpetSettings {
             category = {MTS}
     )
     public static boolean MTSDebugMod = false;
+
+    @Rule(
+            desc = "",
+            category = {SURVIVAL,MTS}
+    )
+    public static boolean awa = false;
 }

@@ -9,7 +9,7 @@
     "Block.IceBlockMixin",
     "Block.LeavesBlockMixin",
     "Block.OakSaplingGeneratorMixin",
-    "ServerWorldMixin"
+    "World.ServerWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1

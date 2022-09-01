@@ -16,7 +16,7 @@ import java.util.Random;
 @Mixin(SaplingBlock.class)
 public abstract class SaplingBlockMixin extends PlantBlock implements Fertilizable {
     public static final IntProperty STAGE;
-    public final  SaplingGenerator generate;
+    public final SaplingGenerator generate;
     private SaplingBlockMixin(SaplingGenerator generator, Settings settings) {
         super(settings);
         this.generate = generator;

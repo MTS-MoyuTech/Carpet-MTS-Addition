@@ -1,6 +1,5 @@
 package top.mtserver.mixins.Entity;
 
-import net.minecraft.entity.damage.DamageTracker;
 import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -32,7 +31,7 @@ public abstract class FireworkRocketEntityMixin {
             this.lifeTime = 10 * i + random.nextInt(6) + random.nextInt(7);
         } else {
             this.lifeTime = MTSCarpetSettings.FireworkLifeTime * i + 6;
-            MTSCarpetServer.Log("Firework at [%x %y %z] spawned with level %level and lifetime %lifetime".replace("%x", String.valueOf(x)).replace("%y", String.valueOf(y)).replace("%z", String.valueOf(z)).replace("%level", String.valueOf(i)).replace("%%lifetime", String.valueOf(lifeTime + 1)));
+            MTSCarpetServer.Log("Firework at [%x %y %z] spawned with level %level and lifetime %lifetime".replace("%x", String.valueOf(x)).replace("%y", String.valueOf(y)).replace("%z", String.valueOf(z)).replace("%level", String.valueOf(i)).replace("%lifetime", String.valueOf(lifeTime + 1)));
         }
     }
 }

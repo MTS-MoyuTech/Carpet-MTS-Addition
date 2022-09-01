@@ -3,8 +3,6 @@ package top.mtserver.utils.World;
 import top.mtserver.MTSCarpetSettings;
 import top.mtserver.utils.CommandDatas;
 
-import static top.mtserver.utils.CommandDatas.*;
-
 public class MTSWorldLoop {
     public static void loop() {
         //AddMSPT

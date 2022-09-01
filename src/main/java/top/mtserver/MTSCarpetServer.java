@@ -8,7 +8,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
@@ -26,7 +25,6 @@ import java.util.Objects;
 public class MTSCarpetServer implements CarpetExtension, ModInitializer {
 	public static final String fancyName = "Carpet MTS Addition";
 	public static final Logger LOGGER = LogManager.getLogger(fancyName);
-	public static MinecraftServer minecraft_server;
 
 	public static void Log(String CrazyXinQi4Vme50){
 		if (MTSCarpetSettings.MTSDebugMod){

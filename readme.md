@@ -126,8 +126,8 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 - 注意,贸然提高区块刻是不文明的行为,即使调整单区块的随机刻,如果过高,依然会引起卡顿
 - 经过测试,全局1024随机刻的mspt为4.9,单个区块1024随机刻的mspt为3.5(单人)
 - 开启这个功能后,使用/specialtickchunk 来操作特殊区块刻
-- /specialtickchunk add (ChunkX) (ChunkZ) (Random Tick Speed):给特殊区块刻添加区块,原版的Random Tick Speed为3
-- /specialtickchunk remove (ChunkX) (ChunkZ) 把某个区块移除特殊区块刻
+- /specialtickchunk add (BlockPos) (Random Tick Speed):给特殊区块刻添加区块,原版的Random Tick Speed为3
+- /specialtickchunk remove (BlockPos) (ChunkZ) 把某个区块移除特殊区块刻
 - /specialtickchunk list显示当前特殊区块刻列表
 - 默认值: `3`
 - 参考选项: `3`, `4096`
@@ -138,8 +138,8 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 
 ### /specialtickchunk (特殊区块刻)
 
-- /specialtickchunk add (ChunkX) (ChunkZ) (Random Tick Speed):给特殊区块刻添加区块,原版的Random Tick Speed为3
-- /specialtickchunk remove (ChunkX) (ChunkZ) 把某个区块移除特殊区块刻
+- /specialtickchunk add (BlockPos) (Random Tick Speed):给特殊区块刻添加区块,原版的Random Tick Speed为3
+- /specialtickchunk remove (BlockPos) 把某个区块移除特殊区块刻
 - /specialtickchunk list显示当前特殊区块刻列表
 - 在v0.1.2a加入
 

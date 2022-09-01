@@ -35,26 +35,21 @@ public class MessageUtil {
         v0.0.5-:thing is the message
         v0.1.0+:the message will be read from %lang%.json
          */
-        if(IsLooking) {
-            List<ServerPlayerEntity> playerEntities = world.getPlayers();
-            for (ServerPlayerEntity serverPlayer : playerEntities) {
-                __tell(serverPlayer.getCommandSource(), s(getLang(key)), IsLooking);
-            }
-        }
+        StringOut(world, getLang(key), IsLooking);
     }
 
     public static void StringOut(ServerWorld world, String thing, boolean IsLooking) {
         if(IsLooking) {
             List<ServerPlayerEntity> playerEntities = world.getPlayers();
             for (ServerPlayerEntity serverPlayer : playerEntities) {
-                __tell(serverPlayer.getCommandSource(), s(thing), IsLooking);
+                __tell(serverPlayer.getCommandSource(), s(thing), true);
             }
         }
     }
 
     public static String getLang(String key){
-        if (new MTSCarpetServer().canHasTranslations(CarpetSettings.language).containsKey(key)){
-            MTSCarpetServer mtsCarpetServer = new MTSCarpetServer();
+        MTSCarpetServer mtsCarpetServer = new MTSCarpetServer();
+        if (mtsCarpetServer.canHasTranslations(CarpetSettings.language).containsKey(key)){
             Map<String,String> Vme50 = mtsCarpetServer.canHasTranslations(CarpetSettings.language);
             if (Vme50 == null){
                 return "";

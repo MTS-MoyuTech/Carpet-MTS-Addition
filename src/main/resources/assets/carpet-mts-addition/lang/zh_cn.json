@@ -74,6 +74,6 @@
 
   "top.mtserver.command.SetBlockAfterTimeCommand.SetBlockAfter": "方块%block将会在%timegt后在%pos放置!",
 
-  "top.mtserver.command.getHistoryNameSuccess_PlayerHaveHistoryName": "玩家%Player的历史名称如下:",
+  "top.mtserver.command.getHistoryNameSuccess_PlayerHaveHistoryName": "玩家%Player(UUID: %UUID)的历史名称如下:",
   "top.mtserver.command.getHistoryNameFailed": "获取玩家历史名称失败:可能是你的网络不行或者玩家名称不对"
 }

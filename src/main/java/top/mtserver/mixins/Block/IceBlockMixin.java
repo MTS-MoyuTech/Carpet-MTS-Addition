@@ -12,7 +12,6 @@ import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import top.mtserver.MTSCarpetServer;
 import top.mtserver.MTSCarpetSettings;
 
 import java.util.Random;
