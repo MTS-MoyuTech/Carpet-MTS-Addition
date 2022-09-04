@@ -1,0 +1,91 @@
+{
+  "rule.CatSpawnerTracker.name": "Cat spawn tracker",
+  "rule.CatSpawnerTracker.desc": "Cats are spawned every 1200gt in a village with 5 beds that have been used. When spawning, a player (including spectators) is randomly selected.\nIn X-axis or Z-axis plus-minus 8-32 tiles, a random location is selected, and 1 cat will be generated at the selected location when there are less than 5 cats in the village 2 block.\nAt full moon, cats randomly pick 11 appearances when spawning; At the time of the non-full moon, cats randomly pick 10 appearances other than black cats when spawning.\n      ----Minecraft Wiki",
+
+  "rule.CatSpawnerInterval.name": "Cat spawn interval modification",
+  "rule.CatSpawnerInterval.desc": "See CatSpawnerTrackern Note that the modified game will still wait for the clock of the previous generator, and this setting will take effect in the next generator.",
+
+  "rule.SpecialTickChunks.name": "Special tick chunks",
+  "rule.SpecialTickChunks.desc": "The game randomly ticks 3 blocks in a block for each gt, and this value can be adjusted by modifying the randomk in gamemerule. But then the random ticking squares of each block will increase, resulting in MSPT++, which is not conducive to debugging the machine. This rule allows you to modify the number of random ticks in a single block, which can avoid unnecessary random ticks and reduce MSPT occupation.",
+
+  "rule.FireworkLifeTime.name": "Fireworks have a fixed life duration",
+  "rule.FireworkLifeTime.desc": "In the vanilla version, the life duration of fireworks was random and uncontrollable\nThis rule will fix the life duration of the fireworks to the firework level * The value of this rule + the duration of 6\nSet this rule to -1 to enable the original random fireworks life",
+
+  "rule.IceNeverMelt.name": "Ice never melts",
+  "rule.IceNeverMelt.desc": "",
+
+  "rule.IceMeltLightLevel.name": "The brightness of the melting ice",
+  "rule.IceMeltLightLevel.desc": "The vanilla melts at brightness 11",
+
+  "rule.IceMeltAlwaysWater.name": "Ice melts into water no matter what",
+  "rule.IceMeltAlwaysWater.desc": "In the vanilla version, if the ice is broken by the player and there is no block underneath, it will disappear directly",
+
+  "rule.FancyOakTreeProbability.name": "The probability of an oak sapling splitting when it grows up\n",
+  "rule.FancyOakTreeProbability.desc": "Set to 0 to prohibit",
+
+  "rule.LeavesNeverDisappear.name": "Leaves never disappear",
+  "rule.LeavesNeverDisappear.desc": "",
+
+  "rule.LeavesDisappearLogDistance.name": "How far away the leaves are from the log will disappear",
+  "rule.LeavesDisappearLogDistance.desc": "",
+
+  "rule.AddMSPT.name": "Add MSPT to the server without burdening the server",
+  "rule.AddMSPT.desc": "In milliseconds, if it is greater than 200, it will be processed as 200",
+
+  "rule.SaplingGrowProbability.name": "The probability that the sapling will grow after receiving a random tick",
+  "rule.SaplingGrowProbability.desc": "The vanilla version is 1/7",
+
+
+  "top.mtserver.string.SpawnerStart": "The spawner starts running",
+  "top.mtserver.string.ResetClock": "The timer resets to",
+  "top.mtserver.string.NoPlayerToSpawn": "No selection to the player, discard spawn",
+  "top.mtserver.string.SpawnChoosePlayer": "The generator attempts to generate in %name, at %block (offset by player coordinates to %offsetX, z offset %offsetZ).",
+  "top.mtserver.AreaNotLoadingGiveUpSpawn": "The chunks are not loaded, the spawn is abandoned",
+  "top.mtserver.string.tryToSpawnInVillage": "Try to spawn in the village",
+  "top.mtserver.string.VillageCheckFailed": "Village detection failed: No villages",
+  "top.mtserver.string.SwampCheckFailed": "Witch Hut spawn failed",
+  "top.mtserver.string.NoHVGiveUPSpawn": "No villages/witch huts, give up spawning",
+  "top.mtserver.string.VillageSpawnSuccess": "Village spawn successfully!",
+  "top.mtserver.string.VillageSpawnFailedBecauseMax": "Village spawn failure: Too many cats(>5)",
+  "top.mtserver.string.VillageSpawnFailedNotEnoughPoint": "Village spawn failure: Insufficient points of interest",
+  "top.mtserver.string.SwampSpawnSuccess": "Witch Hut spawned successfully!",
+  "top.mtserver.string.newCat": "There are new %cats spawned in %block!",
+
+  "top.mtserver.string.cat0": "Tabby cat",
+  "top.mtserver.string.cat1": "Suit cat",
+  "top.mtserver.string.cat2": "Red tabby cat",
+  "top.mtserver.string.cat3": "Siamese cat",
+  "top.mtserver.string.cat4": "English shorthair cat",
+  "top.mtserver.string.cat5": "Flower cat",
+  "top.mtserver.string.cat6": "Persian cat",
+  "top.mtserver.string.cat7": "Muppet cats",
+  "top.mtserver.string.cat8": "White cat",
+  "top.mtserver.string.cat9": "Jellie",
+  "top.mtserver.string.cat10": "Black cat",
+
+  "top.mtserver.string.cat": "cat",
+
+  "top.mtserver.command.SpecialTickChunks.AddChunkPos": "At the coordinates %ChunkX, the chunks of %ChunkZ are engraved with special chunk tick with the value of %randomTickSpeed!",
+  "top.mtserver.command.SpecialTickChunks.RemoveChunkPosSuccess": "The chunk at the pos %ChunkX , %ChunkZ have been moved out special chunk tick!",
+  "top.mtserver.command.SpecialTickChunks.RemoveChunkPosFailed": "At the coordinates %ChunkX, the chunk of %ChunkZ is not exist in special chunk tick!!",
+  "top.mtserver.command.SpecialTickChunks.warn": "Note that you did not turn on the special chunk tick on, and the current changes will take effect when you turn it on",
+  "top.mtserver.command.SpecialTickChunks.list": "The list of special chunk tick to join is as follows:",
+
+  "top.mtserver.command.SetBlockAfterTimeCommand.SetBlockAfter": "Blocks %block will be placed after %timegt at %pos!",
+
+  "top.mtserver.command.getHistoryNameSuccess_PlayerHaveHistoryName": "The historical names of Player %Player are as follows:",
+  "top.mtserver.command.getHistoryNameFailed": "Failed to get player history name: It may be that your network is not working or the player name is incorrect",
+
+  "top.mtserver.command.Log.BlockRandomTick.Changed": "The block %block has been added to random tick monitoring",
+  "top.mtserver.command.Log.BlockRandomTick.ExistNoChange": "The current block is monitored and does not need to be changed",
+  "top.mtserver.command.Log.BlockRandomTick.NotRandomTickable": "Current blocks cannot accept random ticks and cannot be added",
+  "top.mtserver.command.Log.BlockRandomTick.Removed": "Block %block has been moved out of random tick monitoring",
+  "top.mtserver.command.Log.BlockRandomTick.NoBlock": "The current block is not monitored and does not need to be changed",
+  "top.mtserver.command.Log.BlockRandomTick.BlockList": "The currently monitored squares are as follows:",
+  "top.mtserver.command.Log.BlockRandomTick.BlockRandomTicked": "The %block located in %pos is randomly selected!",
+  "top.mtserver.command.Log.AreaRandomTick.Failed": "The area you select is too large (larger than 1000 blocks)",
+  "top.mtserver.command.Log.AreaRandomTick.add.Success": "The squares between the area %StartPos and %EndPos are tracked randomly, and the number of the area: %Id",
+  "top.mtserver.command.Log.AreaRandomTick.remove.Success": "Area number %Id (%StartPos to %EndPos) is untracked randomly ticked",
+  "top.mtserver.command.Log.AreaRandomTick.remove.Failed": "The zone with the region number %Id does not exist",
+  "top.mtserver.command.Log.AreaRandomTick.list": "The areas that are randomly monitored are as follows:"
+}
