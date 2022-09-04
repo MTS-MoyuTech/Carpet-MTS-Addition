@@ -12,8 +12,8 @@ public class MTSWorldLoop {
                 stime = 500;
             }
             Thread.sleep(stime);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (InterruptedException ignored) {
+
         }
 
         //SetblockAfterTime

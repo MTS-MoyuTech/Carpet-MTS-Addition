@@ -44,15 +44,13 @@ public class NetworkUtil {
             if (null != br) {
                 try {
                     br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException ignored) {
                 }
             }
             if (null != is) {
                 try {
                     is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException ignored) {
                 }
             }
             //关闭远程连接
