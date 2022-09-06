@@ -19,8 +19,8 @@ import static top.mtserver.utils.CommandDatas.AreaRandomTickTrackerDatas;
 
 public class RandomTickTrackerCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("randomticktracker").
-                requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
+        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("randomticktracker")
+                .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
                 .then(CommandManager.literal("block")
                         .then(CommandManager.literal("add")
                                 .then(CommandManager.argument("block", BlockStateArgumentType.blockState())
@@ -77,6 +77,7 @@ public class RandomTickTrackerCommand {
 
     public static int AddAreaRandomTickBlock(CommandContext<ServerCommandSource> source, BlockPos StartPos, BlockPos EndPos) {
         int x = (StartPos.getX() - EndPos.getX()) * (StartPos.getY() - EndPos.getY()) * (StartPos.getZ() - EndPos.getZ());
+        //x:选区大小
         if (x <= 1000) {
             for (int i = 0; i <= 100; i++) {
                 if (!AreaRandomTickTrackerDatas.containsKey(i)) {

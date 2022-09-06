@@ -16,8 +16,8 @@ import top.mtserver.utils.StringUtils.ToString;
 
 public class SetBlockAfterTimeCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("setblockaftertime").
-                requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
+        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("setblockaftertime")
+                .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
                 .then(CommandManager.argument("pos", BlockPosArgumentType.blockPos())
                 .then(CommandManager.argument("block", BlockStateArgumentType.blockState())
                 .then(CommandManager.argument("time", IntegerArgumentType.integer())

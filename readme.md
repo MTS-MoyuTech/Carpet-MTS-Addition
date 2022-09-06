@@ -164,3 +164,6 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 - /randomticktracker area remove (id),把id对应的区域移除
 - /randomticktracker area list,与上面同理
 - 在v0.2.1a加入
+
+### /giverandomtick (给一片区域的方块施加随机刻)
+- /giverandomtick (Pos 1) (Pos 2)

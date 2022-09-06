@@ -12,10 +12,7 @@ import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import top.mtserver.commands.HistoryNameCommand;
-import top.mtserver.commands.RandomTickTrackerCommand;
-import top.mtserver.commands.SetBlockAfterTimeCommand;
-import top.mtserver.commands.SpecialTickChunksCommand;
+import top.mtserver.commands.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -55,6 +52,7 @@ public class MTSCarpetServer implements CarpetExtension, ModInitializer {
 		SetBlockAfterTimeCommand.register(dispatcher);
 		HistoryNameCommand.register(dispatcher);
 		RandomTickTrackerCommand.register(dispatcher);
+		GiveRandomTickCommand.register(dispatcher);
 	}
 
 	// 语言模块

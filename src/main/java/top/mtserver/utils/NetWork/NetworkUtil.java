@@ -38,8 +38,7 @@ public class NetworkUtil {
                     }
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         } finally {
             if (null != br) {
                 try {
@@ -67,7 +66,6 @@ public class NetworkUtil {
         // 清空符号(除了:)
         String RawNames = doGet(url).replace("[", "").replace("]", "").replace("{","").replace("}","").replace("\"","");
         String[] Names = RawNames.split(",");
-        System.out.println("test start");
         ArrayList<String> FinalNames = new ArrayList<>();
         for (String RawName : Names) {
             // 真硬核

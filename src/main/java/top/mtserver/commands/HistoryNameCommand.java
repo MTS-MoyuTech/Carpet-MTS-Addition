@@ -10,8 +10,8 @@ import top.mtserver.utils.NetWork.HistoryNameThread;
 
 public class HistoryNameCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("historyname").
-                requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
+        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("historyname")
+                .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
                 .then(CommandManager.argument("name", StringArgumentType.string())
                 .executes((c) -> execute(c.getSource(),StringArgumentType.getString(c,"name"))));
 

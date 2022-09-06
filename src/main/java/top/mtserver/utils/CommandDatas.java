@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.WorldChunk;
 import top.mtserver.MTSCarpetSettings;
+import top.mtserver.utils.World.BlockPosUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,8 +77,9 @@ public class CommandDatas {
 
         public AreaRandomTickTrackerData(ServerCommandSource source, BlockPos start, BlockPos end) {
             this.source = source;
-            this.RealStartPos = new BlockPos(Math.max(start.getX(), end.getX()), Math.max(start.getY(), end.getY()), Math.max(start.getZ(), end.getZ()));
-            this.RealEndPos = new BlockPos(Math.min(start.getX(), end.getX()), Math.min(start.getY(), end.getY()), Math.min(start.getZ(), end.getZ()));
+            BlockPos[] NiqiuNB = BlockPosUtils.FormatBlockPosToHHHLLL(start, end);
+            this.RealStartPos = NiqiuNB[0];
+            this.RealEndPos = NiqiuNB[1];
         }
 
         public boolean inInRange(BlockPos pos) {

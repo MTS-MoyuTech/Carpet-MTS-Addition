@@ -16,8 +16,8 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 
 public class SpecialTickChunksCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("specialtickchunk").
-                requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
+        LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal("specialtickchunk")
+                .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(2))
                         .then(CommandManager.literal("add")
                         .then(CommandManager.argument("Chunk", ChunkPosArgument.ChunkPos())
                         .then(CommandManager.argument("randomTickSpeed", IntegerArgumentType.integer(0, 65536))
