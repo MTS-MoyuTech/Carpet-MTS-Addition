@@ -152,12 +152,12 @@ mc尝试生成猫咪的间隔时间为1200gt,修改这一规则以修改间隔�
 - 在v0.1.7a加入
 
 ### /randomticktracker (随机刻追踪器)
-####有两个选择方式:Block和Area
-####Block使用方法:
+#### 有两个选择方式:Block和Area
+#### Block使用方法:
 - /randomticktracker block add (Block Name),当这种方块接收随机刻时,会把提醒打印给玩家
 - /randomticktracker block remove (Block Name),取消对一种方块的随机刻追踪
 - /randomticktracker block list,显示目前追踪的列表
-####Area使用方法
+#### Area使用方法
 - 每个区域都有一个单独的id,方便命令使用
 - /randomticktracker area add (BlockPos1) (BlockPos2),这两个坐标围成的对角线内的所有方块在接受随机刻后会把提醒打印给玩家
 - 这个命令会给你一个id,在remove时候要使用
